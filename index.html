@@ -1,127 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Business Card Generator</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script>
-        // JQUERY
-        $(function(){
-            $('.button').click(function(){
-              var name = $('#name').val();
-              var occupation = $('#occupation').val();
-              var brand = $('#brand').val();
-              var address = $('#address').val();
-              var phone = $('#phone').val();
-              var email = $('#email').val();
-              var website = $('#website').val();
-              
-              var other = address + "<br>" + phone + "<br>" + email + "<br>" + website
-              
-              var font = $('select').val();
-              var color = $('#color').val();
-              var size1 = $('#size1').val();
-              var size2 = $('#size2').val();
-              var size3 = $('#size3').val();
-              var size4 = $('#size4').val();
-              
-              var bgColor = $('#bgColor').val();
-              var bgImg = $('#bgImg').val();
-              
-              if(bgColor!="" && bgImg==""){
-                $('#card').css('background',bgColor);
-              } else if (bgImg!="" && bgColor==""){
-                $('#card').css({'background-image':'url("'+bgImg+'")','background-size':'cover'});
-              }
-              
-              $('#card h1').html(name).css({'color':color, 'font-family':font, 'font-size':size1});
-              $('#card h2').html(occupation).css({'color':color, 'font-family':font, 'font-size':size2});
-              $('#card h3').html(brand).css({'color':color, 'font-family':font, 'font-size':size3});
-              $('#card p').html(other).css({'color':color, 'font-family':font, 'font-size':size4});
-            });
-        });
-    </script>
-    
-    <style>
-        /*CSS*/
-        body {
-          background-image: linear-gradient(#D4E4FF,#AAFFF1);
+
+<head>
+  <meta charset="UTF-8">
+  <title>Business Card Generator</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    // JQUERY
+    $(function() {
+      $('.button').click(function() {
+        var name = $('#name').val();
+        var occupation = $('#occupation').val();
+        var brand = $('#brand').val();
+        var address = $('#address').val();
+        var phone = $('#phone').val();
+        var email = $('#email').val();
+        var website = $('#website').val();
+
+        var other = address + "<br>" + phone + "<br>" + email + "<br>" + website
+
+        var font = $('select').val();
+        var color = $('#color').val();
+        var size1 = $('#size1').val();
+        var size2 = $('#size2').val();
+        var size3 = $('#size3').val();
+        var size4 = $('#size4').val();
+
+        var bgColor = $('#bgColor').val();
+        var bgImg = $('#bgImg').val();
+
+        if (bgColor != "" && bgImg == "") {
+          $('#card').css('background', bgColor);
         }
-        #card{
-          border: solid 10px white;
-          width: 500px;
-          height: 250px;
-          margin: 10px auto;
-          padding: 30px;
+        else if (bgImg != "" && bgColor == "") {
+          $('#card').css({ 'background-image': 'url("' + bgImg + '")', 'background-size': 'cover' });
         }
-        input, select{
-          border-radius: 10px;
-          border: solid 1px;
-          /*margin: ;*/
-        }
-        #title {
-          padding: 40px;
-          font-size: 50px;
-        }
-        .heading, #title{
-          color: #AD5AFF;
-        }
-        #title, .info{
-          text-align: center;
-          font-family: Arial;
-        }
-        .button{
-          color: red;
-          background: #FFD2FB;
-          padding: 10px 30px;
-          font-size: 20px;
-          margin: 0 25%;
-          border-radius: 50px;
-        }
-        #card h1{
-          top:-5px;
-          text-align: left;
-          padding: 0 0;
-        }
-        #card h2{
-          top:-20px;
-        }
-        #card p{
-          top:-15px;
-        }
-        .content,.design,.images,#card h1,#card h2,#card p{
-          position: relative;
-        }
-        .content,.design,.images{
-          display: inline-block;
-          top:-30px;
-          text-align: left;
-        }
-        .design,.images{
-          padding: 0 0 0 50px;
-        }
-    </style>
-  </head>
-  <body>
-      <!--CONTENT-->
-      <h1 id="title">Business Card Generator</h1>
-      <div class='info'>
-        <div class='content'>
-          <h2 class="heading">Content</h2>
-          <h3>Please fill out the information below</h3>
-          Name: <input id='name' type='text' name='name' placeholder="Bob Rogers" required><br><br>
-          Email: <input id='email' type='email' name='email' placeholder="bob@gmail.com"><br><br>
-          Brand: <input id='brand' type='text' name='brand' placeholder="SEP"><br><br>
-          Phone #: <input id='phone' type='tel' name='phoneNum' placeholder="(123)456-7890"><br><br>
-          Address: <input id='address' type='text' name='address' placeholder="HSTAT Brooklyn, NY"><br><br>
-          Website: <input id='website' type='text' name='website' placeholder="www.hstat.org"><br><br>
-          Occupation: <input id='occupation' type='text' name='job' placeholder="Student">
-        </div>
-      
-        <div class='design'>
-          <h2 class="heading">Design</h2>
-          <h3>Write 'px' at the end for font sizes</h3>
-          Text Font: <select name='font'>
+
+        $('#card h1').html(name).css({ 'color': color, 'font-family': font, 'font-size': size1 + "px" });
+        $('#card h2').html(occupation).css({ 'color': color, 'font-family': font, 'font-size': size2 + "px" });
+        $('#card h3').html(brand).css({ 'color': color, 'font-family': font, 'font-size': size3 + "px" });
+        $('#card p').html(other).css({ 'color': color, 'font-family': font, 'font-size': size4 + "px" });
+      });
+    });
+  </script>
+
+  <style>
+    /*CSS*/
+    body {
+      background-image: linear-gradient(#D4E4FF, #AAFFF1);
+    }
+    #card {
+      border: solid 10px white;
+      width: 500px;
+      height: 250px;
+      margin: 10px auto;
+      padding: 30px;
+    }
+    input, select {
+      border-radius: 10px;
+      border: solid 1px;
+    }
+    #title {
+      padding: 20px 40px 40px 40px;
+      font-size: 50px;
+    }
+    .heading, #title {
+      color: #AD5AFF;
+    }
+    #title, .info {
+      text-align: center;
+      font-family: Arial;
+    }
+    .button {
+      color: red;
+      background: #FFD2FB;
+      padding: 10px 30px;
+      font-size: 20px;
+      margin: 0 25%;
+      border-radius: 50px;
+    }
+    #card h1 {
+      top: -5px;
+      text-align: left;
+      padding: 0 0;
+    }
+    #card h2 {
+      top: -20px;
+    }
+    #card p {
+      top: -15px;
+    }
+    .content, .design, .bg, #card h1, #card h2, #card p {
+      position: relative;
+    }
+    .content, .design, .bg {
+      display: inline-block;
+      top: -30px;
+      text-align: left;
+    }
+    .design, .bg {
+      padding: 0 0 0 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--CONTENT-->
+  <h1 id="title">Business Card Generator</h1>
+  <div class='info'>
+    <div class='content'>
+      <h2 class="heading">Content</h2>
+      <h3>Please fill out the information below</h3>
+      Name: <input id='name' type='text' name='name' placeholder="Bob Rogers" required><br><br> 
+      Email: <input id='email' type='email' name='email' placeholder="bob@gmail.com"><br><br> 
+      Brand: <input id='brand' type='text' name='brand' placeholder="SEP"><br><br>      
+      Phone #: <input id='phone' type='tel' name='phoneNum' placeholder="(123)456-7890"><br><br>
+      Address: <input id='address' type='text' name='address' placeholder="HSTAT Brooklyn, NY"><br><br> 
+      Website: <input id='website' type='text' name='website' placeholder="www.hstat.org"><br><br> 
+      Occupation: <input id='occupation' type='text' name='job' placeholder="Student">
+    </div>
+
+    <div class='design'>
+      <h2 class="heading">Design</h2>
+      <h3>Colors can be written as words or hex codes</h3>
+      Text Font: <select name='font'>
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
             <option value="Comic Sans MS">Comic Sans MS</option>
@@ -135,31 +137,30 @@
             <option value="Times New Roman">Times New Roman</option>
             <option value="Trebuchet MS">Trebuchet MS</option>
             <option value="Verdana">Verdana</option>
-          </select><br><br>
-          Text Color: <input id='color' type='text' name='color' placeholder="black"><br><br>
-          Name Size: <input id='size1' type='text' name="size1" placeholder="30px"><br><br>
-          Occupation Size: <input id='size2' type='text' name="size2" placeholder="25px"><br><br>
-          Brand Size: <input id='size3' type='text' name="size3" placeholder="18px"><br><br>
-          Other Content Size: <input id='size4' type='text' name="size4" placeholder="15px">
-          <h3>You can change these settings anytime</h3>
-        </div>
-        
-        <div class='images'>
-          <h2 class="heading">Images</h2>
-          <h3>Colors can be written as words or hex codes</h3>
-          <h3>Only one input must be filled in</h3>
-          <!--Background Color: <input id='bgColor' type='text' name='bgColor' value="red"><br><br>-->
-          Background Color: <input id='bgColor' type='text' name='bgColor' placeholder="lightgray"> or<br><br>
-          URL Background Image: <input id='bgImg' type='url' name='bgImg' placeholder="https://tinyurl.com/yya6fmed"><br><br>
-          <br><input class='button' type='submit' value="Generate">
-        </div>
-      </div>
-        
-      <div id='card'>
-        <h1></h1>
-        <h2></h2>
-        <h3></h3>
-        <p></p>
-      </div>
-  </body>
+          </select><br><br> 
+      Text Color: <input id='color' type='text' name='color' placeholder="black"><br><br> 
+      Name Size: <input id='size1' type='text' name="size1" placeholder="30"><br><br> 
+      Occupation Size: <input id='size2' type='text' name="size2" placeholder="25"><br><br> 
+      Brand Size: <input id='size3' type='text' name="size3" placeholder="18"><br><br> 
+      Other Content Size: <input id='size4' type='text' name="size4" placeholder="15">
+      <h3>You can change these settings anytime</h3>
+    </div>
+
+    <div class='bg'>
+      <h2 class="heading">Background</h2>
+      <h3>Only one input must be filled in</h3>
+      Background Color: <input id='bgColor' type='text' name='bgColor' placeholder="lightgray"> or<br><br> 
+      URL Background Image: <input id='bgImg' type='url' name='bgImg' placeholder="https://tinyurl.com/yya6fmed"><br><br>
+      <br><input class='button' type='submit' value="Generate">
+    </div>
+  </div>
+
+  <div id='card'>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <p></p>
+  </div><br><br>
+</body>
+
 </html>
